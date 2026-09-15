@@ -1,0 +1,503 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    background: #050505;
+    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at center,
+        rgba(150, 0, 0, 0.35),
+        transparent 35%),
+
+        radial-gradient(circle at 20% 20%,
+        rgba(255, 0, 0, 0.08),
+        transparent 30%),
+
+        radial-gradient(circle at 80% 80%,
+        rgba(255, 215, 0, 0.05),
+        transparent 30%),
+
+        #050505;
+
+    z-index: -3;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    z-index: 5;
+}
+
+.small-text {
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+    letter-spacing: 5px;
+
+    color: #c9a44c;
+
+    margin-bottom: 10px;
+
+    opacity: 0.9;
+}
+
+/* =========================
+   ROSE
+========================= */
+
+.rose {
+    position: relative;
+
+    width: 230px;
+    height: 300px;
+
+    margin-top: 5px;
+}
+
+/* glow */
+
+.glow {
+    position: absolute;
+
+    width: 210px;
+    height: 210px;
+
+    top: 10px;
+    left: 10px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 0, 0, 0.2);
+
+    filter: blur(45px);
+
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        opacity: 0.3;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 0.7;
+        transform: scale(1.15);
+    }
+}
+
+/* flower */
+
+.flower {
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    top: 25px;
+    left: 30px;
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.petal {
+    position: absolute;
+
+    width: 95px;
+    height: 120px;
+
+    left: 38px;
+    top: 25px;
+
+    border-radius: 70% 30% 70% 30%;
+
+    background:
+        radial-gradient(circle at 40% 30%,
+        #ff3030,
+        #a00000 45%,
+        #350000 100%);
+
+    box-shadow:
+        inset -8px -8px 15px rgba(0,0,0,0.7),
+        0 0 15px rgba(255,0,0,0.25);
+
+    transform-origin: 50% 90%;
+}
+
+/* individual petals */
+
+.p1 {
+    transform: rotate(0deg) translateY(-15px);
+}
+
+.p2 {
+    transform: rotate(51deg) translateY(-15px);
+}
+
+.p3 {
+    transform: rotate(102deg) translateY(-15px);
+}
+
+.p4 {
+    transform: rotate(153deg) translateY(-15px);
+}
+
+.p5 {
+    transform: rotate(204deg) translateY(-15px);
+}
+
+.p6 {
+    transform: rotate(255deg) translateY(-15px);
+}
+
+.p7 {
+    transform: rotate(306deg) translateY(-15px);
+}
+
+/* center */
+
+.center {
+    position: absolute;
+
+    width: 65px;
+    height: 65px;
+
+    left: 52px;
+    top: 52px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle at 40% 35%,
+        #ff4a4a,
+        #850000 55%,
+        #150000);
+
+    box-shadow:
+        0 0 20px rgba(255,0,0,0.5);
+
+    z-index: 5;
+}
+
+/* stem */
+
+.stem {
+    position: absolute;
+
+    width: 8px;
+    height: 145px;
+
+    left: 111px;
+    top: 140px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        to right,
+        #071b0b,
+        #23832c,
+        #061006
+    );
+
+    transform: rotate(3deg);
+}
+
+/* leaves */
+
+.leaf {
+    position: absolute;
+
+    width: 75px;
+    height: 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0c5018,
+            #071707
+        );
+
+    border-radius: 100% 0 100% 0;
+
+    top: 215px;
+}
+
+.leaf-left {
+    left: 40px;
+    transform: rotate(25deg);
+}
+
+.leaf-right {
+    right: 40px;
+    transform: scaleX(-1) rotate(25deg);
+}
+
+/* floating flower */
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+}
+
+/* =========================
+   LOVE
+========================= */
+
+h1 {
+    margin-top: -5px;
+
+    font-size: clamp(70px, 15vw, 125px);
+
+    letter-spacing: 15px;
+
+    font-weight: 400;
+
+    color: #f5d67a;
+
+    text-shadow:
+        0 0 5px #fff2b0,
+        0 0 20px rgba(255, 215, 80, 0.8),
+        0 0 45px rgba(255, 0, 0, 0.4);
+
+    animation: loveGlow 2.5s infinite alternate;
+}
+
+@keyframes loveGlow {
+
+    from {
+        text-shadow:
+            0 0 5px #fff2b0,
+            0 0 15px rgba(255,215,80,0.5);
+    }
+
+    to {
+        text-shadow:
+            0 0 10px #fff,
+            0 0 30px #ffd75a,
+            0 0 60px rgba(255,0,0,0.5);
+    }
+}
+
+.line {
+    width: 100px;
+    height: 1px;
+
+    background: #c9a44c;
+
+    margin: 10px 0 15px;
+
+    box-shadow: 0 0 10px #c9a44c;
+}
+
+.message {
+    font-size: 16px;
+
+    font-style: italic;
+
+    color: #eeeeee;
+
+    letter-spacing: 2px;
+}
+
+.diamond {
+    color: #c9a44c;
+
+    margin: 15px;
+
+    font-size: 12px;
+
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.bottom-text {
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color: #777;
+}
+
+/* =========================
+   DOLLAR
+========================= */
+
+.money {
+    position: fixed;
+
+    top: -50px;
+
+    color: #c9a44c;
+
+    font-family: Georgia, serif;
+
+    font-weight: bold;
+
+    text-shadow:
+        0 0 5px rgba(255,215,0,0.6),
+        0 0 15px rgba(255,0,0,0.2);
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation: moneyFall linear forwards;
+}
+
+@keyframes moneyFall {
+
+    0% {
+        transform:
+            translateY(-50px)
+            rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    50% {
+        transform:
+            translateY(50vh)
+            translateX(40px)
+            rotate(180deg);
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            translateX(-50px)
+            rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particle {
+    position: fixed;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #ffd75a;
+
+    box-shadow: 0 0 10px #ffd75a;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation: particleMove linear infinite;
+}
+
+@keyframes particleMove {
+
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-20vh);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   BOTTOM
+========================= */
+
+.hint {
+    position: fixed;
+
+    bottom: 20px;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #555;
+
+    z-index: 10;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .rose {
+        transform: scale(0.8);
+        margin-bottom: -25px;
+    }
+
+    h1 {
+        font-size: 70px;
+        letter-spacing: 9px;
+    }
+
+    .message {
+        font-size: 13px;
+    }
+}
